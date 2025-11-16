@@ -5,29 +5,29 @@
 text-transform: uppercase;
 }
 .head1{
-    width:100% ;
-    height: 30px;
+  display: flex;
+  justify-content: space-between;
+   height: 30px;
     background-color:#ffffff;
     color:  #A1887F;
     position: relative;
+    padding: 3px;
     z-index: 10;
 }
 .leftlinks li,.rightlinks li,.sociallink li{
-      position: relative;
-    display: inline;
-    margin-left: 50px;
-    padding: 5px;
- float: left;
-
+display: inline;
+padding: 5px;
+position: relative;
 }
-.rightlinks li{
-left: 450px;
+.rightlinks{
+  margin-left: 350px;
 }
-.sociallink li{
-  left: 450px;
+.leftlinks{
+  margin-left: 40px;
 }
-
-
+.sociallink{
+  margin-right:50px ;
+}
 .leftlinks li::after,.rightlinks li::after,.sociallink li::after{
 position: absolute;
 top:0;
@@ -63,26 +63,24 @@ opacity: 1;
 opacity: 1;
 transition: 1s;
 }
-.sociallink li:hover{
+.sociallink li:hover i{
     transform: rotateY(180deg);
      color:#3E4E3E;
-
-}
-hr{
-    color: #3B2F2F;
 }
 /* ---------------------head1------------------------------------------------------------------------------------------------------------------ */
 .head2{
-    height: 70px; 
-     width:100%;
-     background-color:#ffffff;
-     position: relative;
-    z-index: 5;
+  display: flex;
+  justify-content: space-between;
+   height: 60px;
+    background-color:#ffffff;
+    color:  #A1887F;
+    position: relative;
+    padding: 3px;
+   z-index: 5;
 }
 
 .head2 img ,.searchlink ,.homelink ,.searchlink li ,.homelink li{
     display: inline;
-    float: left;
     color:#A1887F;
     position: relative;
 }
@@ -90,14 +88,17 @@ hr{
 
 .homelink li ,.searchlink li{
      padding: 5px;
-    margin-left: 50px;
-    margin-top: 20px;
+    margin-left: 10px;
     position: relative;
  
 }
+.homelink{
+  margin-left: -200px;
+  top: 15px;
+}
 .searchlink{
-
-  margin-left: 300px;
+  margin-right: 50px;
+    top: 15px;
 }
 .homelink li::after  ,.searchlink li::after{
 position: absolute;
@@ -154,6 +155,8 @@ height:100%;
   transform: scale(0.9);
   transition: all 0.3s ease;
   visibility: hidden;
+    flex-direction: row;     
+  gap: 20px; 
 }
 
 .dropdown:hover .dropdown-menu{
@@ -165,8 +168,11 @@ height:100%;
 
 .dropdown-menu ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 5px;
+    display: flex;
+  flex-direction: column; 
+  gap: 5px;   
+
 }
 
 .dropdown-menu .first-li {
@@ -177,6 +183,8 @@ height:100%;
 
 .dropdown-menu li {
   transition: all 0.3s ease;
+margin: 5px;
+gap: 5px;
 }
 
 .dropdown-menu li:hover:not(.first-li) {
@@ -185,22 +193,34 @@ height:100%;
 }
 .dropdown {
   position: relative;
-  float: none !important;
-  display: inline;
-top: 25px;
+  
 }
-.p2{
+.moveup {
+  position: relative;
+}
+  .p2{
+  position: absolute;
+  top: -12px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  text-align: center;
   background-color: #A1887F;
   border-radius: 50%;
   color:#ffffff;
-  margin-top: -20px;
- text-align: center;
- padding: 1px;
-  transition: transform 0.3s ease;}
+  
+  transition: 0.3s ease;
+}
+
 .moveup:hover .p2{
   transform: translateY(-3px);
   background-color: #2E3D2E;
 }
+
 /* -------------------------------------------------------head2--------------------------------------------- */
 
 .promo-banner{
@@ -231,6 +251,7 @@ top: 25px;
   gap: 40px;
   flex-wrap: wrap;
 background-color: #F4F1ED; 
+overflow: hidden;
   font-family: Arial, sans-serif;
 }
 
@@ -267,16 +288,11 @@ background-color: #F4F1ED;
   font-size: 15px;
   font-weight: 600;
   color: #fff;
-
   background: linear-gradient(135deg, #E8C9A1, #5C4630);
-
   cursor: pointer;
   border: none;
   border-radius: 15px;
-
-  box-shadow: 3px 3px 8px rgba(0,0,0,0.4),
-              0 0 10px #E8C9A1;
-
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.4), 0 0 10px #E8C9A1;
   transition: all 0.3s ease;
   margin: 30px 100px;
 }
@@ -285,8 +301,7 @@ background-color: #F4F1ED;
   background: linear-gradient(135deg, #5C4630, #E8C9A1);
   transform: translateY(-3px);
 
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.5),
-              0 0 15px #E8C9A1;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.5), 0 0 15px #E8C9A1;
 }
 
 .main-image img {
@@ -294,6 +309,7 @@ background-color: #F4F1ED;
   height: 550px;
   margin: auto;
 }
+
 .img {
   display: block;
   position: relative;
@@ -304,7 +320,7 @@ background-color: #F4F1ED;
 .shadow-img {
   position: absolute;
   top: 250px;   
-  left: 1100px;
+  left: 1000px;
   z-index: 1;
   opacity: 0.5;  
   filter: blur(4px);
